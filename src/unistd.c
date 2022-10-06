@@ -15,7 +15,11 @@
  */
 
 #include "dc_unistd.h"
-#include <unistd.h>
+#ifdef __APPLE__
+    #include <sys/random.h>
+#else
+    #include <unistd.h>
+#endif
 
 int dc_getentropy(const struct dc_posix_env *env, struct dc_error *err, void *buf, size_t buflen)
 {

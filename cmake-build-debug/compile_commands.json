@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/ds/work/dc/dc/libraries/libdc_unix/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -D_DARWIN_C_SOURCE -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Ddc_unix_EXPORTS -I/Users/ds/work/dc/dc/libraries/libdc_unix/include -I/Users/ds/work/dc/dc/libraries/libdc_unix/include/dc_unix -I/usr/local/include -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wstrict-overflow=4 -Wswitch-default -Wswitch-enum -Wunused -Wunused-macros -Wdate-time -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wstrict-prototypes -Wundef -Wnull-dereference -Wstack-protector -Wdouble-promotion -Wvla -Walloca -Woverlength-strings -Wdisabled-optimization -Winline -Wcast-qual -Wfloat-equal -Wformat=2 -Wfree-nonheap-object -Wshift-overflow -Wwrite-strings -fsanitize=address -fsanitize=undefined -fsanitize-address-use-after-scope -fstack-protector-all -fdelete-null-pointer-checks -fno-omit-frame-pointer -o CMakeFiles/dc_unix.dir/src/unistd.c.o -c /Users/ds/work/dc/dc/libraries/libdc_unix/src/unistd.c",
+  "file": "/Users/ds/work/dc/dc/libraries/libdc_unix/src/unistd.c"
+}
+]

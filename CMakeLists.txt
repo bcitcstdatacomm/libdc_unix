@@ -10,7 +10,8 @@ set(CMAKE_C_STANDARD 17)
 set(SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(SOURCE_LIST ${SOURCE_DIR}/unistd.c)
-set(HEADER_LIST ${INCLUDE_DIR}/dc_unix/dc_unistd.h)
+set(HEADER_LIST ${INCLUDE_DIR}/dc_unix/dc_unistd.h
+        ${INCLUDE_DIR}/dc_unix/dc_sysexits.h)
 
 set(SANITIZE TRUE)
 

@@ -144,11 +144,11 @@ endif ()
 
 add_library(dc_unix SHARED ${SOURCE_LIST} ${HEADER_LIST})
 target_include_directories(dc_unix PRIVATE include/dc_unix)
+target_include_directories(dc_unix PRIVATE /usr/local/include)
+target_link_directories(dc_unix PRIVATE /usr/local/lib)
 
 if (NOT APPLE)
     target_include_directories(dc_unix PRIVATE /usr/include)
-    target_include_directories(dc_unix PRIVATE /usr/local/include)
-    target_link_directories(dc_unix PRIVATE /usr/local/lib)
 endif ()
 
 set_target_properties(dc_unix PROPERTIES

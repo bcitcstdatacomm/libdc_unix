@@ -26,7 +26,7 @@ int dc_getentropy(const struct dc_posix_env *env, struct dc_error *err, void *bu
     int ret_val;
 
     DC_TRACE(env);
-    errno        = 0;
+    errno   = 0;
     ret_val = getentropy(buf, buflen);
 
     if(ret_val == -1)

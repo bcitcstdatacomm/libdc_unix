@@ -20,8 +20,12 @@ add_compile_definitions(_POSIX_C_SOURCE=200809L)
 add_compile_definitions(_XOPEN_SOURCE=700)
 add_compile_definitions(_GNU_SOURCE)
 
-if (APPLE)
-    add_definitions(-D_DARWIN_C_SOURCE)
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    add_compile_definitions(_DARWIN_C_SOURCE)
+endif ()
+
+if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+    add_compile_definitions(__BSD_VISIBLE)
 endif ()
 
 include_directories(${INCLUDE_DIR})

@@ -68,7 +68,7 @@ if (${SANITIZE})
     add_compile_options("-fdelete-null-pointer-checks")
     add_compile_options("-fno-omit-frame-pointer")
 
-    if (NOT APPLE)
+    if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         add_compile_options("-fsanitize=leak")
     endif ()
 
@@ -140,7 +140,7 @@ set(CLANG_TIDY_CHECKS "${CLANG_TIDY_CHECKS},-misc-static-assert")
 set(CLANG_TIDY_CHECKS "${CLANG_TIDY_CHECKS},-misc-unused-parameters")
 set(CLANG_TIDY_CHECKS "${CLANG_TIDY_CHECKS},-readability-identifier-length")
 
-if (APPLE)
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     # TODO: find a better way so this is not hard-coded
     set(CMAKE_C_CLANG_TIDY clang-tidy -extra-arg=-I/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -checks=${CLANG_TIDY_CHECKS};--quiet)
 else ()
@@ -152,7 +152,7 @@ target_include_directories(dc_unix PRIVATE include/dc_unix)
 target_include_directories(dc_unix PRIVATE /usr/local/include)
 target_link_directories(dc_unix PRIVATE /usr/local/lib)
 
-if (NOT APPLE)
+if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     target_include_directories(dc_unix PRIVATE /usr/include)
 endif ()
 

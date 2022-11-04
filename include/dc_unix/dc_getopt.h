@@ -6,10 +6,10 @@
 #include <getopt.h>
 
 
-int dc_getopt_long(const struct dc_env *env, struct dc_error *err, int argc, char *const argv[],
+int dc_getopt_long(const struct dc_env *env, int argc, char *const argv[],
                    const char *optstring, const struct option *longopts, int *longindex);
 
-int dc_getopt_long_only(const struct dc_env *env, struct dc_error *err, int argc, char *const argv[],
+int dc_getopt_long_only(const struct dc_env *env, int argc, char *const argv[],
                         const char *optstring, const struct option *longopts, int *longindex);
 
 

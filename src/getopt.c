@@ -18,7 +18,7 @@
 #include "dc_getopt.h"
 
 
-int dc_getopt_long(const struct dc_env *env, struct dc_error *err, int argc, char *const argv[],
+int dc_getopt_long(const struct dc_env *env, int argc, char *const argv[],
                    const char *optstring, const struct option *longopts, int *longindex)
 {
     int ret_val;
@@ -27,15 +27,10 @@ int dc_getopt_long(const struct dc_env *env, struct dc_error *err, int argc, cha
     errno   = 0;
     ret_val = getopt_long(argc, argv, optstring, longopts, longindex);
 
-    if(ret_val == -1)
-    {
-        DC_ERROR_RAISE_ERRNO(err, errno);
-    }
-
     return ret_val;
 }
 
-int dc_getopt_long_only(const struct dc_env *env, struct dc_error *err, int argc, char *const argv[],
+int dc_getopt_long_only(const struct dc_env *env, int argc, char *const argv[],
                         const char *optstring, const struct option *longopts, int *longindex)
 {
     int ret_val;
@@ -43,11 +38,6 @@ int dc_getopt_long_only(const struct dc_env *env, struct dc_error *err, int argc
     DC_TRACE(env);
     errno   = 0;
     ret_val = getopt_long_only(argc, argv, optstring, longopts, longindex);
-
-    if(ret_val == -1)
-    {
-        DC_ERROR_RAISE_ERRNO(err, errno);
-    }
 
     return ret_val;
 }

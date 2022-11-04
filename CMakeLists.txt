@@ -12,9 +12,10 @@ set(SANITIZE TRUE)
 set(SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
-set(SOURCE_LIST ${SOURCE_DIR}/unistd.c)
-set(HEADER_LIST ${INCLUDE_DIR}/dc_unix/dc_unistd.h
-        ${INCLUDE_DIR}/dc_unix/dc_sysexits.h)
+set(SOURCE_LIST ${SOURCE_DIR}/getopt.c)
+set(HEADER_LIST ${INCLUDE_DIR}/dc_unix/dc_getopt.h
+        ${INCLUDE_DIR}/dc_unix/dc_sysexits.h
+    )
 
 add_compile_definitions(_POSIX_C_SOURCE=200809L)
 add_compile_definitions(_XOPEN_SOURCE=700)

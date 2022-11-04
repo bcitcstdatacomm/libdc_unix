@@ -49,6 +49,7 @@
 #endif
 
 
+// TODO: MOVE THIS TO UTIL
 // https://krueger.report/programming/exit-status-codes/
 // https://pubs.opengroup.org/onlinepubs/009695299/utilities/trap.html
 #define EX_NOEXEC 126

@@ -1,5 +1,9 @@
 #include "net/dc_ethernet.h"
 
+#ifdef __linux__
+#include <netinet/ether.h>
+#endif
+
 
 struct ether_addr *dc_ether_aton(const char *a)
 {

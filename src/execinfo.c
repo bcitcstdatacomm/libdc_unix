@@ -1,9 +1,9 @@
 #include "dc_execinfo.h"
 
 
-size_t dc_backtrace(void **a, size_t b)
+size_t dc_backtrace(void **addrlist, size_t len)
 {
-    return backtrace(a, b);
+    return backtrace(addrlist, len);
 }
 
 char **dc_backtrace_symbols(void *const *a, size_t b)

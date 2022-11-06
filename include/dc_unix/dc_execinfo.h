@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include <execinfo.h>
 
 
 size_t dc_backtrace(void **, size_t);

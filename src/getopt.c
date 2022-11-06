@@ -16,7 +16,7 @@
 
 
 #include "dc_getopt.h"
-
+#include <sys/mount.h>
 
 int dc_getopt_long(const struct dc_env *env, int argc, char *const argv[],
                    const char *optstring, const struct option *longopts, int *longindex)

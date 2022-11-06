@@ -12,10 +12,33 @@ set(SANITIZE TRUE)
 set(SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
-set(SOURCE_LIST ${SOURCE_DIR}/getopt.c)
-set(HEADER_LIST ${INCLUDE_DIR}/dc_unix/dc_getopt.h
-        ${INCLUDE_DIR}/dc_unix/dc_sysexits.h
+set(SOURCE_LIST ${SOURCE_DIR}/err.c
+        ${SOURCE_DIR}/execinfo.c
+        ${SOURCE_DIR}/fstab.c
+        ${SOURCE_DIR}/getopt.c
+        ${SOURCE_DIR}/ifaddrs.c
+        ${SOURCE_DIR}/getopt.c
+#        ${SOURCE_DIR}/resolv.c
+        ${SOURCE_DIR}/ttyent.c
+#        ${SOURCE_DIR}/arpa/nameser.c
+        ${SOURCE_DIR}/net/ethernet.c
+        ${SOURCE_DIR}/sys/mount.c
+        ${SOURCE_DIR}/sys/timex.c
     )
+        set(HEADER_LIST
+        ${INCLUDE_DIR}/dc_unix/dc_err.h
+        ${INCLUDE_DIR}/dc_unix/dc_execinfo.h
+        ${INCLUDE_DIR}/dc_unix/dc_fstab.h
+        ${INCLUDE_DIR}/dc_unix/dc_ifaddrs.h
+        ${INCLUDE_DIR}/dc_unix/dc_getopt.h
+#        ${INCLUDE_DIR}/dc_unix/dc_resolv.h
+        ${INCLUDE_DIR}/dc_unix/dc_sysexits.h
+        ${INCLUDE_DIR}/dc_unix/dc_ttyent.h
+        )
+#set(HEADER_LIST_ARPA ${INCLUDE_DIR}/dc_unix/arpa/dc_nameser.h)
+set(HEADER_LIST_NET ${INCLUDE_DIR}/dc_unix/net/dc_ethernet.h)
+set(HEADER_LIST_NET ${INCLUDE_DIR}/dc_unix/sys/dc_mount.h
+        ${INCLUDE_DIR}/dc_unix/sys/dc_timex.h)
 
 add_compile_definitions(_POSIX_C_SOURCE=200809L)
 add_compile_definitions(_XOPEN_SOURCE=700)
@@ -108,7 +131,7 @@ set(DOXYGEN_WARNINGS YES)
 set(DOXYGEN_QUIET YES)
 
 doxygen_add_docs(doxygen
-        ${HEADER_LIST}
+        ${HEADER_LIST} ${HEADER_LIST_ARPA} ${HEADER_LIST_NET}
         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
         COMMENT "Generating Doxygen documentation for libdc_unix")
 
@@ -148,7 +171,7 @@ else ()
     set(CMAKE_C_CLANG_TIDY clang-tidy -checks=${CLANG_TIDY_CHECKS};--quiet)
 endif ()
 
-add_library(dc_unix SHARED ${SOURCE_LIST} ${HEADER_LIST})
+add_library(dc_unix SHARED ${SOURCE_LIST} ${HEADER_LIST} ${HEADER_LIST_ARPA} ${HEADER_LIST_NET} ${HEADER_LIST_SYS})
 target_include_directories(dc_unix PRIVATE include/dc_unix)
 target_include_directories(dc_unix PRIVATE /usr/local/include)
 target_link_directories(dc_unix PRIVATE /usr/local/lib)
@@ -164,13 +187,18 @@ set_target_properties(dc_unix PROPERTIES
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
 find_library(LIBDC_POSIX dc_posix REQUIRED)
+find_library(LIBBIND bind)
 
 target_link_libraries(dc_unix PUBLIC ${LIBDC_ERROR})
 target_link_libraries(dc_unix PUBLIC ${LIBDC_ENV})
 target_link_libraries(dc_unix PUBLIC ${LIBDC_POSIX})
+# target_link_libraries(dc_unix PUBLIC ${LIBBIND})
 
 install(TARGETS dc_unix LIBRARY DESTINATION lib)
 install(FILES ${HEADER_LIST} DESTINATION include/dc_unix)
+install(FILES ${HEADER_LIST_ARPA} DESTINATION include/dc_unix/arpa)
+install(FILES ${HEADER_LIST_NET} DESTINATION include/dc_unix/net)
+install(FILES ${HEADER_LIST_SYS} DESTINATION include/dc_unix/sys)
 
 add_dependencies(dc_unix doxygen)
 

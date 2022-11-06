@@ -166,9 +166,9 @@ set(CLANG_TIDY_CHECKS "${CLANG_TIDY_CHECKS},-readability-identifier-length")
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     # TODO: find a better way so this is not hard-coded
-    set(CMAKE_C_CLANG_TIDY clang-tidy -extra-arg=-I/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -checks=${CLANG_TIDY_CHECKS};--quiet)
+    #set(CMAKE_C_CLANG_TIDY clang-tidy -extra-arg=-I/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include -checks=${CLANG_TIDY_CHECKS};--quiet)
 else ()
-    set(CMAKE_C_CLANG_TIDY clang-tidy -checks=${CLANG_TIDY_CHECKS};--quiet)
+    #Eset(CMAKE_C_CLANG_TIDY clang-tidy -checks=${CLANG_TIDY_CHECKS};--quiet)
 endif ()
 
 add_library(dc_unix SHARED ${SOURCE_LIST} ${HEADER_LIST} ${HEADER_LIST_ARPA} ${HEADER_LIST_NET} ${HEADER_LIST_SYS})

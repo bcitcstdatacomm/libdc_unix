@@ -1,6 +1,5 @@
 #include <resolv.h>
 
-
 int dc_res_hnok(const char *);
 int dc_res_ownok(const char *);
 int dc_res_mailok(const char *);

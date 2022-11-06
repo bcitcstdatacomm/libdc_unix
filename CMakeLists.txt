@@ -13,29 +13,29 @@ set(SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 set(SOURCE_LIST ${SOURCE_DIR}/err.c
-#        ${SOURCE_DIR}/execinfo.c
+        ${SOURCE_DIR}/execinfo.c
         ${SOURCE_DIR}/fstab.c
         ${SOURCE_DIR}/getopt.c
         ${SOURCE_DIR}/ifaddrs.c
         ${SOURCE_DIR}/getopt.c
-#        ${SOURCE_DIR}/resolv.c
+        ${SOURCE_DIR}/resolv.c
         ${SOURCE_DIR}/ttyent.c
-#        ${SOURCE_DIR}/arpa/nameser.c
+        ${SOURCE_DIR}/arpa/nameser.c
         ${SOURCE_DIR}/net/ethernet.c
         ${SOURCE_DIR}/sys/mount.c
         ${SOURCE_DIR}/sys/timex.c
     )
         set(HEADER_LIST
         ${INCLUDE_DIR}/dc_unix/dc_err.h
-#        ${INCLUDE_DIR}/dc_unix/dc_execinfo.h
+        ${INCLUDE_DIR}/dc_unix/dc_execinfo.h
         ${INCLUDE_DIR}/dc_unix/dc_fstab.h
         ${INCLUDE_DIR}/dc_unix/dc_ifaddrs.h
         ${INCLUDE_DIR}/dc_unix/dc_getopt.h
-#        ${INCLUDE_DIR}/dc_unix/dc_resolv.h
+        ${INCLUDE_DIR}/dc_unix/dc_resolv.h
         ${INCLUDE_DIR}/dc_unix/dc_sysexits.h
         ${INCLUDE_DIR}/dc_unix/dc_ttyent.h
         )
-#set(HEADER_LIST_ARPA ${INCLUDE_DIR}/dc_unix/arpa/dc_nameser.h)
+set(HEADER_LIST_ARPA ${INCLUDE_DIR}/dc_unix/arpa/dc_nameser.h)
 set(HEADER_LIST_NET ${INCLUDE_DIR}/dc_unix/net/dc_ethernet.h)
 set(HEADER_LIST_NET ${INCLUDE_DIR}/dc_unix/sys/dc_mount.h
         ${INCLUDE_DIR}/dc_unix/sys/dc_timex.h)

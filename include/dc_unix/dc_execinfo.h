@@ -1,4 +1,5 @@
 #include <execinfo.h>
+#include <stddef.h>
 
 
 size_t dc_backtrace(void **addrlist, size_t len);

@@ -41,21 +41,6 @@ int dc_ns_parserr(ns_msg *a, ns_sect b, int c, ns_rr *d)
     return ns_parserr(a, b, c, d);
 }
 
-int dc_ns_sprintrr(const ns_msg *a, const ns_rr *b, const char *c, const char *d, char *e, size_t f)
-{
-    return ns_sprintrr(a, b, c, d, e, f);
-}
-
-int dc_ns_format_ttl(u_long a, char *b, size_t c)
-{
-    return ns_format_ttl(a, b, c);
-}
-
-int dc_ns_parse_ttl(const char *a, u_long *b)
-{
-    return ns_parse_ttl(a, b);
-}
-
 int dc_ns_name_ntol(const u_char *a, u_char *b, size_t c)
 {
     return ns_name_ntol(a, b, c);
@@ -101,17 +86,3 @@ void dc_ns_name_rollback(const u_char *a, const u_char **b, const u_char **c)
     ns_name_rollback(a, b, c);
 }
 
-int dc_ns_samedomain(const char *a, const char *b)
-{
-    return ns_samedomain(a, b);
-}
-
-int dc_ns_makecanon(const char *a, char *b, size_t c)
-{
-    return ns_makecanon(a, b, c);
-}
-
-int dc_ns_samename(const char *a, const char *b)
-{
-    return ns_samename(a, b);
-}

@@ -13,7 +13,7 @@ set(SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 set(SOURCE_LIST ${SOURCE_DIR}/err.c
-        ${SOURCE_DIR}/execinfo.c
+#        ${SOURCE_DIR}/execinfo.c
         ${SOURCE_DIR}/fstab.c
         ${SOURCE_DIR}/getopt.c
         ${SOURCE_DIR}/ifaddrs.c
@@ -27,7 +27,7 @@ set(SOURCE_LIST ${SOURCE_DIR}/err.c
     )
         set(HEADER_LIST
         ${INCLUDE_DIR}/dc_unix/dc_err.h
-        ${INCLUDE_DIR}/dc_unix/dc_execinfo.h
+#        ${INCLUDE_DIR}/dc_unix/dc_execinfo.h
         ${INCLUDE_DIR}/dc_unix/dc_fstab.h
         ${INCLUDE_DIR}/dc_unix/dc_ifaddrs.h
         ${INCLUDE_DIR}/dc_unix/dc_getopt.h

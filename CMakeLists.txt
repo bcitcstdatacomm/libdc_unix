@@ -187,12 +187,15 @@ set_target_properties(dc_unix PROPERTIES
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
 find_library(LIBDC_POSIX dc_posix REQUIRED)
-find_library(LIBBIND bind)
+find_library(LIBRESOLV resolv)
 
 target_link_libraries(dc_unix PUBLIC ${LIBDC_ERROR})
 target_link_libraries(dc_unix PUBLIC ${LIBDC_ENV})
 target_link_libraries(dc_unix PUBLIC ${LIBDC_POSIX})
-# target_link_libraries(dc_unix PUBLIC ${LIBBIND})
+
+if(LIBRESOLV)
+    target_link_libraries(dc_unix PUBLIC ${LIBRESOLV})
+endif()
 
 install(TARGETS dc_unix LIBRARY DESTINATION lib)
 install(FILES ${HEADER_LIST} DESTINATION include/dc_unix)

@@ -1,5 +1,4 @@
 #include "dc_resolv.h"
-#include <netinet/in.h>
 
 
 int dc_res_hnok(const char *a)

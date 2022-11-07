@@ -1,9 +1,9 @@
-#ifndef LIBDC_UTIL_SYSEXITS_H
-#define LIBDC_UTIL_SYSEXITS_H
+#ifndef LIBDC_UTIL_DC_SYSEXITS_H
+#define LIBDC_UTIL_DC_SYSEXITS_H
 
 
 /*
- * Copyright 2021-2021 D'Arcy Smith.
+ * Copyright 2021-2022 D'Arcy Smith.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,4 +64,4 @@
 #define EX_SIGTERM 128 + SIGTERM
 
 
-#endif // LIBDC_UTIL_SYSEXITS_H
+#endif // LIBDC_UTIL_DC_SYSEXITS_H

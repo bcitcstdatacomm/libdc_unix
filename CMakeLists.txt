@@ -19,6 +19,7 @@ set(SOURCE_LIST ${SOURCE_DIR}/err.c
         ${SOURCE_DIR}/ifaddrs.c
         ${SOURCE_DIR}/getopt.c
         ${SOURCE_DIR}/resolv.c
+        ${SOURCE_DIR}/stdlib.c
         ${SOURCE_DIR}/ttyent.c
         ${SOURCE_DIR}/arpa/nameser.c
         ${SOURCE_DIR}/net/ethernet.c
@@ -32,6 +33,7 @@ set(SOURCE_LIST ${SOURCE_DIR}/err.c
         ${INCLUDE_DIR}/dc_unix/dc_ifaddrs.h
         ${INCLUDE_DIR}/dc_unix/dc_getopt.h
         ${INCLUDE_DIR}/dc_unix/dc_resolv.h
+        ${INCLUDE_DIR}/dc_unix/dc_stdlib.h
         ${INCLUDE_DIR}/dc_unix/dc_sysexits.h
         ${INCLUDE_DIR}/dc_unix/dc_ttyent.h
         )

@@ -19,10 +19,10 @@
  */
 
 
-//#include <sys/types.h>
-//#include <sys/socket.h>
-#include <net/ethernet.h>
 #include <dc_env/env.h>
+#include <net/ethernet.h>
+#include <sys/types.h>
+#include <sys/socket.h>
 
 
 #ifdef __cplusplus

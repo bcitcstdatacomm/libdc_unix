@@ -20,8 +20,8 @@
 
 
 #include <dc_env/env.h>
-// #include <netinet/in.h>
-// #include <sys/socket.h>
+#include <netinet/in.h>
+#include <sys/socket.h>
 #include <resolv.h>
 
 

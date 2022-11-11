@@ -21,9 +21,9 @@
 
 #include <dc_env/env.h>
 #include <inttypes.h>
+#include <sys/types.h>
 #include <net/ethernet.h>
 #include <sys/socket.h>
-#include <sys/types.h>
 
 
 #ifdef __cplusplus

@@ -15,7 +15,7 @@
  */
 
 
-#include "net/dc_ethernet.h"
+#include "dc_unix/net/dc_ethernet.h"
 
 #ifdef __linux__
 #include <netinet/ether.h>

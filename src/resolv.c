@@ -15,6 +15,6 @@
  */
 
 
-#include "dc_resolv.h"
+#include "dc_unix/dc_resolv.h"
 
 

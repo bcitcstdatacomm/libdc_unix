@@ -29,7 +29,7 @@ extern "C" {
 
 
 int dc_getifaddrs(const struct dc_env *env, struct dc_error *err, struct ifaddrs **ifap);
-void dc_freeifaddrs(const struct dc_env *env, struct dc_error *err, struct	ifaddrs	*ifp);
+void dc_freeifaddrs(const struct dc_env *env, struct	ifaddrs	*ifp);
 
 
 #ifdef __cplusplus

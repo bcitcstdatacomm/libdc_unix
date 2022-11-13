@@ -15,6 +15,6 @@
  */
 
 
-#include "arpa/dc_nameser.h"
+#include "dc_unix/arpa/dc_nameser.h"
 
 

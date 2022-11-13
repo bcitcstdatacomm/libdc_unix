@@ -15,6 +15,28 @@
  */
 
 
-#include "dc_ifaddrs.h"
+#include "dc_unix/dc_ifaddrs.h"
 
 
+int dc_getifaddrs(const struct dc_env *env, struct dc_error *err, struct ifaddrs **ifap)
+{
+    int ret_val;
+
+    DC_TRACE(env);
+    errno = 0;
+    ret_val = getifaddrs(ifap);
+
+    if(ret_val == -1)
+    {
+        DC_ERROR_RAISE_ERRNO(err, errno);
+    }
+
+    return ret_val;
+}
+
+void dc_freeifaddrs(const struct dc_env *env, struct	ifaddrs	*ifp)
+{
+    DC_TRACE(env);
+    errno = 0;
+    freeifaddrs(ifp);
+}

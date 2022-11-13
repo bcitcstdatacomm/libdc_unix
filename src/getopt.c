@@ -15,7 +15,7 @@
  */
 
 
-#include "dc_getopt.h"
+#include "dc_unix/dc_getopt.h"
 #include <sys/mount.h>
 
 

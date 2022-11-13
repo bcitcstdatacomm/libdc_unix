@@ -15,6 +15,6 @@
  */
 
 
-#include "dc_ttyent.h"
+#include "dc_unix/dc_ttyent.h"
 
 

@@ -19,3 +19,33 @@
 #include <stdlib.h>
 
 
+uint32_t dc_arc4random(const struct dc_env *env)
+{
+    uint32_t ret_val;
+
+    DC_TRACE(env);
+    errno = 0;
+    ret_val = arc4random();
+
+    return ret_val;
+}
+
+void dc_arc4random_buf(const struct dc_env *env, void *buf, size_t nbytes)
+{
+    DC_TRACE(env);
+    errno = 0;
+    arc4random_buf(buf, nbytes);
+
+}
+
+uint32_t dc_arc4random_uniform(const struct dc_env *env, uint32_t upper_bound)
+{
+    uint32_t ret_val;
+
+    DC_TRACE(env);
+    errno = 0;
+    ret_val = arc4random_uniform(upper_bound);
+
+    return ret_val;
+
+}

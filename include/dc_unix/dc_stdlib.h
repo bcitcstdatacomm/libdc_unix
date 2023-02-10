@@ -29,9 +29,9 @@ extern "C" {
 #endif
 
 
-uint32_t dc_arc4random(const struct dc_env *env, struct dc_error *err);
-void dc_arc4random_buf(const struct dc_env *env, struct dc_error *err, void *buf, size_t nbytes);
-uint32_t dc_arc4random_uniform(const struct dc_env *env, struct dc_error *err, uint32_t upper_bound);
+uint32_t dc_arc4random(const struct dc_env *env);
+void dc_arc4random_buf(const struct dc_env *env, void *buf, size_t nbytes);
+uint32_t dc_arc4random_uniform(const struct dc_env *env, uint32_t upper_bound);
 
 
 #ifdef __cplusplus

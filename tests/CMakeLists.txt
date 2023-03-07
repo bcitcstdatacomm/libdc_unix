@@ -25,13 +25,18 @@ find_library(LIBCGREEN cgreen REQUIRED)
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
 find_library(LIBRESOLV resolv)
+find_library(LIBBSD bsd)
 
 target_link_libraries(libdc_unix_test PRIVATE ${LIBCGREEN})
 target_link_libraries(libdc_unix_test PRIVATE ${LIBDC_ERROR})
 target_link_libraries(libdc_unix_test PRIVATE ${LIBDC_ENV})
 
 if(LIBRESOLV)
-    target_link_libraries(dc_unix PUBLIC ${LIBRESOLV})
+    target_link_libraries(libdc_unix_test PUBLIC ${LIBRESOLV})
+endif()
+
+if(LIBBSD)
+    target_link_libraries(libdc_unix_test PUBLIC ${LIBBSD})
 endif()
 
 add_test(NAME dc_unix_test COMMAND libdc_unix_test)

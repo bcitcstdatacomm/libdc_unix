@@ -225,6 +225,7 @@ find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_ENV dc_env REQUIRED)
 find_library(LIBDC_POSIX dc_posix REQUIRED)
 find_library(LIBRESOLV resolv)
+find_library(LIBRBSD bsd)
 
 target_link_libraries(dc_unix PUBLIC ${LIBDC_ERROR})
 target_link_libraries(dc_unix PUBLIC ${LIBDC_ENV})
@@ -232,6 +233,10 @@ target_link_libraries(dc_unix PUBLIC ${LIBDC_POSIX})
 
 if(LIBRESOLV)
     target_link_libraries(dc_unix PUBLIC ${LIBRESOLV})
+endif()
+
+if(LIBBSD)
+    target_link_libraries(dc_unix PUBLIC ${LIBBSD})
 endif()
 
 get_property(LIB64 GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS)
